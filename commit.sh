@@ -1,4 +1,4 @@
-begin=$(cat ./begin) # init: 972576000
+begin=$(expr $(cat ./begin) + 86400) # init: 972576000
 end=$(date '+%s')
 
 list=$(seq $begin 86400 $end)
@@ -13,5 +13,4 @@ do
     git add ./README.md
     git add ./begin
     git commit --date=$i --message='add'
-
 done
