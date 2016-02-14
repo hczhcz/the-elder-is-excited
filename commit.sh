@@ -14,3 +14,5 @@ do
     git add ./begin
     git commit --date=$i --message='add'
 done
+
+git push origin HEAD
