@@ -2,6 +2,7 @@ begin=$(expr $(cat ./begin) + 86400) # init: 972576000
 end=$(date '+%s')
 
 list=$(seq $begin 86400 $end)
+after=''
 
 for i in $list
 do
@@ -13,6 +14,8 @@ do
     git add ./README.md
     git add ./begin
     git commit --date=$i --message='add'
+
+    after='git push origin HEAD'
 done
 
-git push origin HEAD
+eval $after
