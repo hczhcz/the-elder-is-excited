@@ -6,7 +6,7 @@ after=''
 
 for i in $list
 do
-    date --date=@$i '+%Y年%m月%d日：没有' >> ./README.md
+    date -u --date=@$i '+%Y年%m月%d日：没有' >> ./README.md
     echo >> ./README.md
 
     echo $i > ./begin
