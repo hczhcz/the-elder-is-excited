@@ -14,8 +14,6 @@ do
     git add ./README.md
     git add ./begin
     git commit --date=$i --message='add'
-
-    after='git push origin HEAD'
 done
 
-eval $after
+git push origin HEAD
