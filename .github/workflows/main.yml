@@ -1,0 +1,28 @@
+name: test
+
+on:
+  workflow_dispatch:
+  
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Time Steal
+        run: |
+              git config --local user.email "Fangliding.fshxy@outlook.com"
+              git config --local user.name "风扇滑翔翼"
+              git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+              date '+%Y年%m月%d日：没有' >> ./README.md
+              echo >> ./README.md
+              echo $i > ./begin
+              git add ./README.md
+              git add ./begin
+              git commit  -m "+1s"
+              git pull --rebase
+              git push
