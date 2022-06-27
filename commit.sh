@@ -16,4 +16,4 @@ do
     git commit --date=$i --message='add'
 done
 
-git push origin HEAD
+git push -f origin HEAD
