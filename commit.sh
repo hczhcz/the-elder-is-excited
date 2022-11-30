@@ -1,3 +1,8 @@
+echo 'rip'
+exit
+
+# ========
+
 begin=$(expr $(cat ./begin) + 86400) # init: 972576000
 end=$(date '+%s')
 
